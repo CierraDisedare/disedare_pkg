@@ -1,0 +1,39 @@
+---
+title: "Package Tutorial"
+author: "Cierra Disedare"
+date: "2022-11-15"
+output: html_document
+---
+
+# An Introduction to My R Package
+### Subtitle
+
+My R package is ..... and does.....
+Words within *asterists* or _underscores_ gives italics.
+Using **double** or __either__ gives bold.
+When we go onto a new line does not create a new line on knitted file.
+
+New paragraphs start after a line of space.
+
+```{r}
+sum(4, 6)
+```
+
+[1] 10
+
+## Installation Instructions
+
+```{r eval=FALSE, include=TRUE}
+install.packages("phytools")
+# IF YOU INCLUDE TEXT IN CODE CHUNK IT MUST BE COMMENTED  with #.
+```
+Go in and choose show nothing and don't run code off installation instructions.
+Change include=FALSE to TRUE.
+
+Can include text anywhere in document.
+
+![Caption](path/to/image) #This allows you to include image, with a caption in the caption section, and then the path to the image (meaning the image has to be uploaded to Rstudio, cannot be JPEG). 
+
+It is possible to include [hyper links](wright-lab.org).
+
+

@@ -1,0 +1,18 @@
+Package: class.project
+Title: Functions for Bats Mass
+Version: 0.0.0.900
+Authors@R: 
+    person("Cierra", "Disedare", , "cierra.disedare@selu.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Contains functions for various tasks related to configuring relationships between the mass of bats with their genus and species.
+License: MIT + file LICENSE
+Depends:
+  R (>= 2.10) 
+Imports: 
+  tidyverse, ggplot2, readxl
+Suggests: 
+  knitr, rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
