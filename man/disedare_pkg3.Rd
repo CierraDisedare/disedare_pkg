@@ -2,20 +2,24 @@
 % Please edit documentation in R/function_3.R
 \name{disedare_pkg3}
 \alias{disedare_pkg3}
-\title{My function is making a histogram of the mass_of_bat data.}
+\title{My function is selecting and returning three columns.}
 \usage{
 disedare_pkg3(file_path)
 }
 \arguments{
-\item{mass_of_bat}{is the bats mass without the mass of the bag, as a numeric and without 'NAs'.}
+\item{genus}{is the individual bat captured genus}
+
+\item{species}{is the individual bat captured species}
+
+\item{mass_of_bat}{is the bats mass without the mass of the bag}
 }
 \value{
-Returning the histogram of the mass_of_bat data.
+Returning the columns genus, species, and mass_of_bat out of the data set.
 }
 \description{
-My function is making a histogram of the mass_of_bat data.
+My function is selecting and returning three columns.
 }
 \examples{
-histogram <- hist(disedare$mass_of_bat)
+select(genus, species, mass_of_bat)
 
 }

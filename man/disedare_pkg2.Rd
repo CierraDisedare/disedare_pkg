@@ -2,26 +2,23 @@
 % Please edit documentation in R/function_2.R
 \name{disedare_pkg2}
 \alias{disedare_pkg2}
-\title{My function is changing the mass_of_bat column from characters to numerics.}
+\title{My function is changing the mass_of_bat column from characters to numerics and dropping "NA's".}
 \usage{
 disedare_pkg2(file_path)
 }
 \arguments{
-\item{mass_of_bat}{is the bats mass without the mass of the bag, now as a numeric.}
+\item{mass_of_bat}{is the bats mass without the mass of the bag, now as a numeric and without "NA's".}
+
+\item{filepath}{allows the data to be installed.}
 }
 \value{
 Returning the data with mass_of_bat as a numberic and no 'NA'.
 }
 \description{
-My function is changing the mass_of_bat column from characters to numerics.
+My function is changing the mass_of_bat column from characters to numerics and dropping "NA's".
 }
 \examples{
 as.numeric(disedare$mass_of_bat)
 drop_na(disedare)
 
-disedare$mass_of_bat
-disedare$mass_of_bat <- as.numeric(disedare$mass_of_bat) 
-disedare
-disedare$mass_of_bat
-drop_na(disedare)
 }
