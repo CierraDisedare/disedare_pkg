@@ -6,34 +6,124 @@ output: html_document
 ---
 
 # An Introduction to My R Package
-### Subtitle
+### Class Project
 
-My R package is ..... and does.....
-Words within *asterists* or _underscores_ gives italics.
-Using **double** or __either__ gives bold.
-When we go onto a new line does not create a new line on knitted file.
-
-New paragraphs start after a line of space.
-
-```{r}
-sum(4, 6)
-```
-
-[1] 10
+My R package takes a portion of the data provided in a data set, and works with it to create comprehensible and usable visualizations.
 
 ## Installation Instructions
 
+First install the below packages to work with this data set and utilize the function codes without error.
+
+```{r eval=FALSE, include=TRUE}
+install.packages("tidyverse")
+library("tidyverse")
+```
+
+```{r eval=FALSE, include=TRUE}
+install.packages("ggplot2")
+library("ggplot2")
+```
+
+```{r eval=FALSE, include=TRUE}
+install.packages("readxl")
+library("readxl")
+disedare_data <- read_excel("Data/Molmol_database_20180716Dina.xlsx")
+```
+
+```{r eval=FALSE, include=TRUE}
+install.packages("googlesheets4")
+library("googlesheets4")
+gs4_deauth()
+disedare_data <- read_sheet("https://docs.google.com/spreadsheets/d/1i-KjE51-tl0U9_PiqmTvVYSkh4UKXWCo/edit?usp=sharing&ouid=101255936712150037071&rtpof=true&sd=true")
+```
+
+```{r eval=FALSE, include=TRUE}
+install.packages("class.project")
+library("class.project")
+```
+
+Function 1 of my package reads in the data set. This data set can be accessed at the link. [R_Data](https://docs.google.com/spreadsheets/d/1i-KjE51-tl0U9_PiqmTvVYSkh4UKXWCo/edit?usp=sharing&ouid=101255936712150037071&rtpof=true&sd=true). Once this is opened, download it to your local computer as an Excel Spreadsheet, and then upload it to your RStudio. 
+
+This is the easiest way to access and utilize the data set. This is useful code for downloading, uploading, and then reading in excel data sets.
+
+Below is function 1 of this package.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg1 <- function(file_path) {
+      disedare_data <- read_excel("Data/Molmol_database_20180716Dina.xlsx")
+       return(disedare_data)
+   } 
+```
+
+To then view the action of this function run the code below.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg1(disedare_data)
+```
+
+Function 2 of my package alters a column of data to be numerics. This is useful code for altering the type of data in a column or row if it is incorrect or unfitting to the analysis being done.
+
+Below is function 2 of this package.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg2 <- function(file_path) {
+  disedare$mass_of_bat <- as.numeric(disedare_data$mass_of_bat)
+            clean_data <- na.omit(disedare_data)
+       return(clean_data)
+}
+```
+
+To then view the action of this function run the code below.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg2(disedare_data)
+```
+
+Function 3 of my package selects 3 columns to work with. This code is useful for minizing what data in the data set you are working with, and can be preporatory for running functions from the selected data.
+
+**You may need to library ("tidyverse") here.**
+
+Below is function 3 of this package.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg3 <- function(file_path) {
+  group_data <- disedare_data %>% 
+    select(genus, species, mass_of_bat)
+  return(group_data)
+} 
+```
+
+To then view the action of this function run the code below.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg3(disedare_data)
+```
+
+Function 4 of my package creates a visualization (histogram) of the selected data columns. This code is useful to know how to create a histogram, and though it gives an unplesant and difficult to interpret visualization, it is still based off the data and helpful to know what won't work well with certain data frames.
+
+Below is function 4 of this package.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg4 <- function(file_path) {
+  histogram <- hist(disedare_data$mass_of_bat) 
+  return(histogram)
+} 
+```
+
+To then view the action of this function run the code below.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg4(disedare_data)
+```
+
+Function 5 of my package creates a visualization (ggplot) of the selected columns. This code is useful in knowing how to creat a ggplot. it also shows a much easier to comprehend visualization than function 4, enforcing the concept that some codes work better with some data than others.
+
+Below is function 5 of this package.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg5 <- function(file_path) {
+  geom_point <- ggplot(data = disedare_data, mapping = aes(x = genus, y = mass_of_bat)) + geom_point()
+  return(geom_point)
+} 
+```
+
+To then view the action of this function run the code below.
+```{r eval=FALSE, include=TRUE}
+disedare_pkg5(disedare_data)
+```
+
+
 ```{r eval=FALSE, include=TRUE}
 install.packages("phytools")
-# IF YOU INCLUDE TEXT IN CODE CHUNK IT MUST BE COMMENTED  with #.
 ```
-Go in and choose show nothing and don't run code off installation instructions.
-Change include=FALSE to TRUE.
-
-Can include text anywhere in document.
-
-![Caption](path/to/image) #This allows you to include image, with a caption in the caption section, and then the path to the image (meaning the image has to be uploaded to Rstudio, cannot be JPEG). 
-
-It is possible to include [hyper links](wright-lab.org).
-
-
