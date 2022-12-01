@@ -7,11 +7,11 @@
 disedare_pkg3(file_path)
 }
 \arguments{
-\item{genus}{is the individual bat captured genus}
+\item{genus}{is the individual bat captured genus.}
 
-\item{species}{is the individual bat captured species}
+\item{species}{is the individual bat captured species.}
 
-\item{mass_of_bat}{is the bats mass without the mass of the bag}
+\item{mass_of_bat}{is the bats mass without the mass of the bag.}
 }
 \value{
 Returning the columns genus, species, and mass_of_bat out of the data set.
@@ -20,6 +20,6 @@ Returning the columns genus, species, and mass_of_bat out of the data set.
 My function is selecting and returning three columns.
 }
 \examples{
-select(genus, species, mass_of_bat)
+select(column x, column y, column z)
 
 }

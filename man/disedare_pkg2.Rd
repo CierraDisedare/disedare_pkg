@@ -12,13 +12,13 @@ disedare_pkg2(file_path)
 \item{filepath}{allows the data to be installed.}
 }
 \value{
-Returning the data with mass_of_bat as a numberic and no 'NA'.
+Returning the data with mass_of_bat as a numeric and no 'NA' values.
 }
 \description{
 My function is changing the mass_of_bat column from characters to numerics and dropping "NA's".
 }
 \examples{
-as.numeric(disedare$mass_of_bat)
-drop_na(disedare)
+as.numeric(dataset$column)
+drop_na(dataset)
 
 }

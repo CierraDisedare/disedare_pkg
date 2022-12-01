@@ -2,20 +2,22 @@
 % Please edit documentation in R/function_4.R
 \name{disedare_pkg4}
 \alias{disedare_pkg4}
-\title{My function is making a histogram of the mass_of_bat data.}
+\title{My function is making a ggplot with geom_point.}
 \usage{
 disedare_pkg4(file_path)
 }
 \arguments{
 \item{mass_of_bat}{is the bats mass without the mass of the bag, as a numeric and without 'NAs'.}
+
+\item{genus}{is the genus of each bat captured.}
 }
 \value{
-Returning the histogram of the mass_of_bat data.
+Returning the plot of mass_of_bat by genus.
 }
 \description{
-My function is making a histogram of the mass_of_bat data.
+My function is making a ggplot with geom_point.
 }
 \examples{
-histogram <- hist(disedare$mass_of_bat)
+geom_point <- ggplot(data = dataset, mapping = aes(x = , y = )) + geom_point()
 
 }

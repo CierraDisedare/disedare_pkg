@@ -1,14 +1,20 @@
-#' My function is making a ggplot with geom_point.
+#' My function is creating a linear model regression of two columns from the data set.
 
 #' @param mass_of_bat is the bats mass without the mass of the bag, as a numeric and without 'NAs'.
-#' @param genus is the genus of each bat captured.
+#' @param building is the individual site each was captured.
 #'
-#' @return Returning the plot of mass_of_bat by genus.
+#' @return Returning the linear model regression of the two variables, response then predictor.
 #'
 #' @examples 
-#' geom_point <- ggplot(data = disedare, mapping = aes(x = genus, y = mass_of_bat)) + geom_point()
+#' model_fit <- lm(y/response ~ x/predictor, data = dataset)
+#' summary(dataset)
 #'
+#" install.packages("parsnip")
+#" library("parsnip")
 disedare_pkg5 <- function(file_path) {
-  geom_point <- ggplot(data = disedare_data, mapping = aes(x = genus, y = mass_of_bat)) + geom_point()
-  return(geom_point)
+  model_fit <- lm(mass_of_bat ~ building, data = disedare_data)
+  return(model_fit)
 } 
+#' summary(model_fit)
+
+#' disedare_pkg5(disedare_data) or disedare_pkg5(model_fit)

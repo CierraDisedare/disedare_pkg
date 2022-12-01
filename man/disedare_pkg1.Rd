@@ -2,7 +2,7 @@
 % Please edit documentation in R/function_1.R
 \name{disedare_pkg1}
 \alias{disedare_pkg1}
-\title{This function is reading  in the data set.}
+\title{This function is reading in the data set.}
 \usage{
 disedare_pkg1(file_path)
 }
@@ -13,9 +13,19 @@ disedare_pkg1(file_path)
 Returning the data set as disedare_data read into R.
 }
 \description{
-This function is reading  in the data set.
+This function is reading in the data set.
 }
 \examples{
-read_excel("Data/Molmol_database_20180716Dina.xlsx")
+read_excel("data/dataset.xlsx")
 
+install.packages("tidyverse")
+library("tidyverse")
+install.packages("ggplot2")
+library("ggplot2")
+install.packages("readxl")
+library("readxl")
+(https://docs.google.com/spreadsheets/d/1i-KjE51-tl0U9_PiqmTvVYSkh4UKXWCo/
+edit?usp=sharing&ouid=101255936712150037071&rtpof=true&sd=true).
+Once this is opened, download it to your local computer as an Excel 
+Spreadsheet,and then upload it into your RStudio data folder. 
 }

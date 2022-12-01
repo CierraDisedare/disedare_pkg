@@ -2,22 +2,23 @@
 % Please edit documentation in R/function_5.R
 \name{disedare_pkg5}
 \alias{disedare_pkg5}
-\title{My function is making a ggplot with geom_point.}
+\title{My function is creating a linear model regression of two columns from the data set.}
 \usage{
 disedare_pkg5(file_path)
 }
 \arguments{
 \item{mass_of_bat}{is the bats mass without the mass of the bag, as a numeric and without 'NAs'.}
 
-\item{genus}{is the genus of each bat captured.}
+\item{building}{is the indivual site each was captured.}
 }
 \value{
-Returning the plot of mass_of_bat by genus.
+Returning the linear model regression of the two variables, response then predictor.
 }
 \description{
-My function is making a ggplot with geom_point.
+My function is creating a linear model regression of two columns from the data set.
 }
 \examples{
-geom_point <- ggplot(data = disedare, mapping = aes(x = genus, y = mass_of_bat)) + geom_point()
+model_fit <- lm(y/response ~ x/predictor, data = dataset)
+summary(dataset)
 
 }
